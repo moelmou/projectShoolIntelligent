@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+
+ 
+
+
+  <body>
+  
+ <%- include('partials/headerPa.ejs') %>
+    
+
+  
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <h2>PARENT PANEL</h2>
+    </div>
+    <nav class="main-nav" role="navigation">
+      <ul class="sidebar-nav unstyled list-hover-slide">
+        
+        <li >
+          <a  href="/generateParent">EMPLOIS DE TEMPS</a>
+        </li>
+        <li >
+          <a  href="/circulaireParentView">CIRCULAIRE</a>
+        </li>
+        <li >
+          <a  href="/eventParentView">EVENTS</a>
+        </li>
+        <li >
+          <a  href="/noteParentView">GRADES</a>
+        </li>
+        <li >
+          <a  href="/absenceParentView">ABSENCES</a>
+        </li>
+      </ul>
+      </nav>
+  </aside>
+
+    <div id="wrapper" class="nav-wrap">
+ 
+
+
+      <div id="navbar-wrapper">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <h3 style="padding-right: 730px;color: black;">Home Page</h3>
+              
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+        
+        <div>
+          <div  class="container " style="padding-top: 9px;">
+              <div class="row" style="padding: 15px;">
+                  <div class="col-md-6">
+                      <div class="card">
+                          <div class="card-body container card text-white bg-primary mb-3"  >
+                              <h1 class="text-center"> <h1 class="text-center"><%= totals[0].paye?'Has payed':'has not payed'  %></h1></h1>
+                              <h3>this month</h3>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="card">
+                          <div class="card-body container card text-white bg-primary mb-3"  >
+                              <h1 class="text-center"> <%=totals[0].retards %></p>
+                              <h3>Retards (hours) </h3>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <%- include('partials/footer.ejs') %>
+   </body>
+</html>

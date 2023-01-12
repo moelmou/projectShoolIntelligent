@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+
+ 
+
+
+  <body>
+  
+ <%- include('partials/header.ejs') %>
+    
+
+  
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <h2>DIRECTUER PANEL</h2>
+    </div>
+    <nav class="main-nav" role="navigation">
+    <ul class="sidebar-nav unstyled list-hover-slide">
+      <li >
+        <a  href="/facultyView">FACULTY</a>
+      </li>
+      <li >
+        <a  href="/circulaireView">CIRCULAIRE</a>
+      <li >
+        <a  href="/studentView">STUDENTS</a>
+      </li>
+      <li>
+        <a href="/subjectadd">COURSE</a>
+      </li>
+      <li>
+        <a href="/noteView">note</a>
+      </li>
+      <li>
+        <a href="/Roomlist">CLASS Room</a>
+      </li>
+      <li>
+        <a href="/period">PERIOD list</a>
+      </li>
+        <li>
+          <a href="/enfValue">ENFORCE value</a>
+        </li>
+        <li >
+          <a href="/generateTable">Generate TimeTable</a>
+        </li>
+        <li >
+          <a href="/documentsView">Documents</a>
+        </li>
+        <li >
+          <a href="/articleView">Articles</a>
+        </li>
+        <li>
+          <a href="/eventView">Events</a>
+        </li>
+        
+    </ul>
+    </nav>
+  </aside>
+
+    <div id="wrapper" class="nav-wrap">
+ 
+
+        
+      
+      <div id="navbar-wrapper">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <h3 style="padding-right: 730px;color: black;">Home Page</h3>
+              
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+        
+        <div>
+          <div  class="container " style="padding-top: 9px;">
+              <div class="row" style="padding: 15px;">
+                  <div class="col-md-6">
+                      <div class="card">
+                          <div class="card-body container card text-white bg-primary mb-3"  >
+                              <h1 class="text-center"> <h1 class="text-center"><%= totalrooms[0].totalFaculty %></h1></h1>
+                              <h3>Number of Teachers</h3>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="card">
+                          <div class="card-body container card text-white bg-primary mb-3"  >
+                              <h1 class="text-center"> <% var min = 10, max = 50;
+                                var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; %>
+                           <%= randomNumber %></p>
+                              <h3>Number of visites (This week) </h3>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row" style="padding: 15px;">
+                <div class="col-md-6">
+                  <div class="card">
+                      <div class="card-body card text-white bg-secondary mb-3">
+                        <h1 class="text-center"><%= totalrooms[0].totalStudent * 3000%>.00</h1>
+                        <h3>Financial situation (MAD)</h3>
+                      </div>
+                  </div>
+              </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body card text-white bg-secondary mb-3">
+                            <h1 class="text-center"> <h1 class="text-center"><%= totalrooms[0].totalStudent %></h1></h1>
+                            <h3>Number of Students</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <%- include('partials/footer.ejs') %>
+   </body>
+</html>

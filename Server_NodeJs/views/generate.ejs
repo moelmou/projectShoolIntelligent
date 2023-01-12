@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     
+    <title>Generate view</title>
+   
+  </head>
+  <body>
+  
+   
+    <%- include('partials/header.ejs') %>
+    <div id="wrapper">
+
+      <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+          <h2>PRINCIPAL PANEL</h2>
+        </div>
+        <nav class="main-nav" role="navigation">
+        <ul class="sidebar-nav unstyled list-hover-slide">
+          <li >
+            <a  href="/facultyView">FACULTY</a>
+          </li>
+          <li >
+            <a  href="/circulaireView">CIRCULAIRE</a>
+          </li>
+          <li >
+            <a  href="/studentView">Students</a>
+          </li>
+          <li>
+            <a href="/subjectadd">COURSE</a>
+          </li>
+          <li>
+            <a href="/noteView">note</a>
+          </li>
+          <li>
+            <a href="/Roomlist">CLASS Room</a>
+          </li>
+          <li>
+            <a href="/period">PERIOD list</a>
+          </li>
+            <li >
+              <a href="/enfValue">ENFORCE value</a>
+            </li>
+            <li class="active">
+              <a href="/generateTable">Generate TimeTable</a>
+            </li>
+            <li >
+              <a href="/documentsView">Documents</a>
+            </li>
+            <li >
+              <a href="/articleView">Articles</a>
+            </li>
+            <li>
+              <a href="/eventView">Events</a>
+            </li>
+            
+        </ul>
+        </nav>
+      </aside>
+      
+      <div id="navbar-wrapper">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <h3 color: black;">Generate Time Table </h3>
+              
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      
+      
+      <div class="container"> 
+        
+        <form style="margin-top: 30px;" action="/createTable" method="post">
+        <div   class="form-group">
+                <input   style="width: 40%; " name="semister" required="required"  placeholder="Semister" list=semister_editors > </input>
+                <datalist  id="semister_editors">
+                <select  class="form-control"   id="semister">
+                  <% for(var i=0; i < semister.length; i++) { %>
+                    <option ><%= semister[i].semisterNumber %> </option>
+                    <% } %>
+                  </select>
+                </datalist>
+                <button style="float: right;" type="submit" class="btn btn-primary">Submit</button>
+         
+            </div>
+        </div>
+    </form>
+    
+    </div>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <%- include('partials/footer.ejs') %>
+  </body>
+</html>

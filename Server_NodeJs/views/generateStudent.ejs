@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     
+    <title>Emploi du temps </title>
+   
+  </head>
+  <body>
+  
+   
+    <%- include('partials/headerS.ejs') %>
+    <div id="wrapper">
+
+      <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+          <h2>STUDENT PANEL</h2>
+        </div>
+        <nav class="main-nav" role="navigation">
+          <ul class="sidebar-nav unstyled list-hover-slide">
+            
+            <li>
+              <a  href="/articleStudentView">MY ARTICLES</a>
+            </li>
+            <li >
+              <a  href="/generateStudent">EMPLOIS DE TEMPS</a>
+            </li>
+            <li >
+              <a  href="/contributionStudentView">MY CONTRIBUTION</a>
+            </li>
+            <li >
+              <a  href="/documentsProfView">DOCUMENTS</a>
+            </li>
+            <li >
+              <a  href="/noteStudentView">MY GRADES</a>
+            </li>
+            <li class="active">
+              <a  href="/absenceStudentView">MY ABSENCES</a>
+            </li>
+          </ul>
+          </nav>
+      </aside>
+      
+      <div id="navbar-wrapper">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <h3 color: black;">Emploi du temps </h3>
+              
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      
+      
+      <div class="container"> 
+        
+        <form style="margin-top: 30px;" action="/createTable" method="post">
+        <div   class="form-group">
+                <input   style="width: 40%; " name="semister" required="required"  placeholder="Semister" list=semister_editors > </input>
+                <datalist  id="semister_editors">
+                <select  class="form-control"   id="semister">
+                  <% for(var i=0; i < semister.length; i++) { %>
+                    <option ><%= semister[i].semisterNumber %> </option>
+                    <% } %>
+                  </select>
+                </datalist>
+                <button style="float: right;" type="submit" class="btn btn-primary">Afficher</button>
+         
+            </div>
+        </div>
+    </form>
+    
+    </div>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <%- include('partials/footer.ejs') %>
+  </body>
+</html>
